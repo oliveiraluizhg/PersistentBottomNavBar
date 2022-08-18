@@ -64,8 +64,7 @@ class _BottomNavStyle6State extends State<BottomNavStyle6>
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Expanded(
-                        child: IconTheme(
+                      IconTheme(
                           data: IconThemeData(
                               size: item.iconSize,
                               color: isSelected
@@ -78,34 +77,17 @@ class _BottomNavStyle6State extends State<BottomNavStyle6>
                           child: isSelected
                               ? item.icon
                               : item.inactiveIcon ?? item.icon,
-                        ),
                       ),
                       item.title == null
                           ? SizedBox.shrink()
                           : Padding(
-                              padding: const EdgeInsets.only(top: 15.0),
+                              padding: const EdgeInsets.only(top: 8),
                               child: Material(
                                 type: MaterialType.transparency,
                                 child: FittedBox(
                                   child: Text(
                                     item.title!,
-                                    style: item.textStyle != null
-                                        ? (item.textStyle!.apply(
-                                            color: isSelected
-                                                ? (item.activeColorSecondary ==
-                                                        null
-                                                    ? item.activeColorPrimary
-                                                    : item.activeColorSecondary)
-                                                : item.inactiveColorPrimary))
-                                        : TextStyle(
-                                            color: isSelected
-                                                ? (item.activeColorSecondary ==
-                                                        null
-                                                    ? item.activeColorPrimary
-                                                    : item.activeColorSecondary)
-                                                : item.inactiveColorPrimary,
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 12.0),
+                                    style: item.textStyle
                                   ),
                                 ),
                               ),
