@@ -64,19 +64,23 @@ class _BottomNavStyle6State extends State<BottomNavStyle6>
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      IconTheme(
+                      SizedBox(
+                        width: double.maxFinite,
+                        child: IconTheme(
                           data: IconThemeData(
-                              size: item.iconSize,
-                              color: isSelected
-                                  ? (item.activeColorSecondary == null
-                                      ? item.activeColorPrimary
-                                      : item.activeColorSecondary)
-                                  : item.inactiveColorPrimary == null
-                                      ? item.activeColorPrimary
-                                      : item.inactiveColorPrimary),
+                            size: item.iconSize,
+                            color: isSelected
+                                ? (item.activeColorSecondary == null
+                                    ? item.activeColorPrimary
+                                    : item.activeColorSecondary)
+                                : item.inactiveColorPrimary == null
+                                    ? item.activeColorPrimary
+                                    : item.inactiveColorPrimary,
+                          ),
                           child: isSelected
                               ? item.icon
                               : item.inactiveIcon ?? item.icon,
+                        ),
                       ),
                       item.title == null
                           ? SizedBox.shrink()
@@ -87,7 +91,7 @@ class _BottomNavStyle6State extends State<BottomNavStyle6>
                                 child: FittedBox(
                                   child: Text(
                                     item.title!,
-                                    style: item.textStyle
+                                    style: item.textStyle,
                                   ),
                                 ),
                               ),
